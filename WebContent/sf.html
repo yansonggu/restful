@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>show content</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<script type="text/javascript">
+	 
+
+		setTimeout(read, 3000);
+		  $.ajax({
+			    url:'bfile',
+			    success: function (data){
+			      //parse your data here
+			      //you can split into lines using data.split('\n') 
+			      //an use regex functions to effectively parse it
+			    	$('p').write(data);
+			    }
+			  });
+	 
+		 
+	</script>
+	<div id="hello-div"> 
+		<p id="hello-p">hello from a paragraph p block</p>
+	</div>
+</body>
+</html>
+

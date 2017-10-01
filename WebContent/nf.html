@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="jquery.min.js"></script><!-- give corrected jquery path -->
+  <script>
+  setInterval(function(){get_contents();}, 10000*60);
+  function get_contents() {
+    $.get('file_read.php', function(data) {
+        $('#contents').append(data);
+      });
+  }
+  </script>
+</head>
+<body>
+  <div id="contents">Loading...</div>
+</body>
+</html>

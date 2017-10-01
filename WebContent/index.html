@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>download and upload file content</title>
+</head>
+<body>
+	<form action="rest/file/upLoadContent" method="post">
+		<label>Enter your Text Message here: </label><br>
+		<textarea id="uploadContent" rows="10" cols="60"></textarea>
+		<input type="submit" name="submitContent"
+			value="post to server" />
+	</form>
+
+	<br>
+	<a href="./rest/file/getFileContent">display file content</a>
+	<br>
+	<a href="./rest/file/clearFile">clear file</a>
+
+</body>
+</html>
