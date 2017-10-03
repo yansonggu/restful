@@ -5,10 +5,12 @@
 <title>download and upload file content</title>
 </head>
 <body>
+
+
 	<form action="rest/file/upLoadContent" method="post">
 		<label>Enter your Text Message here: </label><br>
-		<textarea id="uploadContent" rows="10" cols="60"></textarea>
-		<input type="submit" name="submitContent"
+		<textarea name="uploadContent" rows="10" cols="60"></textarea>
+		<br> <input type="submit" name="submitContent"
 			value="post to server" />
 	</form>
 
@@ -16,6 +18,28 @@
 	<a href="./rest/file/getFileContent">display file content</a>
 	<br>
 	<a href="./rest/file/clearFile">clear file</a>
-
+	<br>
+	<a href="./rest/file/comExecute/pid">check pids</a>
+	<br>
+	<a href="./rest/file/comExecute/docker">check dockers running</a>
+	<br>
+	<a href="./rest/file/comExecute/network">check network</a>
+	<br>
+	<a href="./rest/file/comExecute/ethernet">check ethernet</a> 
+	<!-- 
+	<a href="./rest/file/comExecute/reboot">reboot</a> -->
+	<br>
+	<a href="./rest/file/comExecute/l">list files</a>
+	  <!-- 
+	<a href="./rest/file/comExecute/scipull">pull scifinder</a> -->
+	<br> 
+	<a href="./rest/file/comExecute/viewaliases">check bash aliases</a>
+	<br>
+	<a href="./rest/file/comExecute/history">check history</a>
+	<br>
+	<a href="./rest/file/comExecute/jetty">check jetty</a>
+	<br>
+	<a href="./rest/file/comExecute/tomcat">check tomcat</a>
+	<br>
 </body>
 </html>

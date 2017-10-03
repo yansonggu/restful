@@ -37,4 +37,95 @@ public class HelloFromGu {
 		System.out.println("clear file on server ");
 		new FileContentWriter("/home/yxg23/afile.txt").clearContent();
 	}
+	
+	@Path("/comExecute/pid")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String displayExeccute() throws InterruptedException, IOException {
+		
+		String executeResults= new ComFile().comExec("ps aux");
+		return executeResults;
+	}
+	@Path("/comExecute/docker")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String displayDocker() throws InterruptedException, IOException {
+		
+		String executeResults= new ComFile().comExec("docker ps");
+		return executeResults;
+	}
+	@Path("/comExecute/network")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String displayNetwork() throws InterruptedException, IOException {
+		
+		String executeResults= new ComFile().comExec("netstat");
+		return executeResults;
+	}
+	@Path("/comExecute/ethernet")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String displayip() throws InterruptedException, IOException {
+		
+		String executeResults= new ComFile().comExec("ifconfig");
+		return executeResults;
+	}
+	@Path("/comExecute/reboot")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String displayReboot() throws InterruptedException, IOException {
+		
+		String executeResults= new ComFile().comExec("sudo reboot");
+		return executeResults;
+	}
+	@Path("/comExecute/l")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String displayFiles() throws InterruptedException, IOException {
+		
+		String executeResults= new ComFile().comExec("ls -l  /home/yxg23");
+		return executeResults;
+	}
+	@Path("/comExecute/scipull")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String displayScipull() throws InterruptedException, IOException {
+		
+		String executeResults= new ComFile().comExec("scipull");
+		return executeResults;
+	}
+	
+	@Path("/comExecute/viewaliases")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String displayViewbash() throws InterruptedException, IOException {
+		
+		String executeResults= new ComFile().comExec("grep . /home/yxg23/.bash_aliases");
+		return executeResults;
+	}
+	
+	@Path("/comExecute/history")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String displayHistory() throws InterruptedException, IOException {
+		
+		String executeResults= new ComFile().comExec("history");
+		return executeResults;
+	}
+	@Path("/comExecute/jetty")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String displayJetty() throws InterruptedException, IOException {
+		
+		String executeResults= new ComFile().comExec("ps aux\\|grep jetty");
+		return executeResults;
+	}
+	@Path("/comExecute/tomcat")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String displayTomcat() throws InterruptedException, IOException {
+		
+		String executeResults= new ComFile().comExec("ps aux\\|grep tomcat");
+		return executeResults;
+	}
 }
