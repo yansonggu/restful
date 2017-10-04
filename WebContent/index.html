@@ -7,39 +7,63 @@
 <body>
 
 
-	<form action="rest/file/upLoadContent" method="post">
+
+	<form action="rest/file/upLoadContenx" method="post">
+
 		<label>Enter your Text Message here: </label><br>
-		<textarea name="uploadContent" rows="10" cols="60"></textarea>
-		<br> <input type="submit" name="submitContent"
-			value="post to server" />
+		<textarea name="uploadContent2" rows="10" cols="60"></textarea>
+		<p>
+			File To Write To: <input type="text" name="writeFile" /> File To
+			Append To: <input type="text" name="appendFile" /> <input
+				type="submit" name="submitContent" value="post to server" />
+		</p>
+	</form>
+	<form action="rest/file/create" method="post">
+		<p>
+			File To Create: <input type="text" name="createFile" /> <input
+				type="submit" name="submitFilename" value="create file" />
+		</p>
+	</form>
+	<form action="rest/file/show" method="post">
+		<p>
+			File To Show: <input type="text" name="showFile" /> <input
+				type="submit" name="show File" value="show file " />
+		</p>
+	</form>
+	<form action="rest/file/clear" method="post">
+		<p>
+			File To Clear: <input type="text" name="clearFile" /> <input
+				type="submit" name="clear File" value="clear file " />
+		</p>
 	</form>
 
-	<br>
-	<a href="./rest/file/getFileContent">display file content</a>
-	<br>
-	<a href="./rest/file/clearFile">clear file</a>
-	<br>
-	<a href="./rest/file/comExecute/pid">check pids</a>
-	<br>
-	<a href="./rest/file/comExecute/docker">check dockers running</a>
-	<br>
-	<a href="./rest/file/comExecute/network">check network</a>
-	<br>
-	<a href="./rest/file/comExecute/ethernet">check ethernet</a> 
-	<!-- 
+	<form action="rest/file/delete" method="delete">
+		<p>
+			File To Delete: <input type="text" name="deleteFile" /> <input
+				type="submit" name="delete File" value="delete file " />
+		</p>
+	</form>
+	<p align="center">
+		<br> <a href="./rest/file/getFileContent">display default
+			file: afile.txt</a> <br> <a href="./rest/file/clearFileContent">clear
+			default file: afile.txt</a> <br> <a
+			href="./rest/file/comExecute/pid">check pids</a> <br> <a
+			href="./rest/file/comExecute/docker">check dockers running</a> <br>
+		<a href="./rest/file/comExecute/network">check network</a> <br> <a
+			href="./rest/file/comExecute/ethernet">check ethernet</a>
+		<!-- 
 	<a href="./rest/file/comExecute/reboot">reboot</a> -->
-	<br>
-	<a href="./rest/file/comExecute/l">list files</a>
-	  <!-- 
+		<br> <a href="./rest/file/comExecute/l">list files</a>
+		<!-- 
 	<a href="./rest/file/comExecute/scipull">pull scifinder</a> -->
-	<br> 
-	<a href="./rest/file/comExecute/viewaliases">check bash aliases</a>
-	<br>
-	<a href="./rest/file/comExecute/history">check history</a>
-	<br>
-	<a href="./rest/file/comExecute/jetty">check jetty</a>
-	<br>
-	<a href="./rest/file/comExecute/tomcat">check tomcat</a>
-	<br>
+		<br> <a href="./rest/file/comExecute/viewaliases">check bash
+			aliases</a> <br> <a href="./rest/file/comExecute/history">check
+			history</a> <br> <a href="./rest/file/comExecute/jetty">check
+			jetty or tomcat</a> <br> <a href="./rest/file/comExecute/tomcat">check
+			program names</a> <br>
+	</p>
+	<p>
+		<a href="./rest/file/uris">get uri keys and values</a> <br>
+	</p>
 </body>
 </html>

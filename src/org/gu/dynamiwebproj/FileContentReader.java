@@ -1,6 +1,10 @@
 package org.gu.dynamiwebproj;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import javax.ws.rs.Path;
 
 /**
  * Created by yxg23 on 9/27/17.
@@ -19,6 +23,7 @@ public class FileContentReader {
 		String tempString = "";
 		
 		try {
+
 			BufferedReader br = new BufferedReader(new FileReader(fileName));
 			
 
