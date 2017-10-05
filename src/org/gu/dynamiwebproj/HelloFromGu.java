@@ -8,6 +8,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
@@ -57,7 +58,11 @@ public class HelloFromGu {
 	@POST
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
-	public ResponseBuilder createFile(@FormParam("createFile") String filename) {
+	public String createFile(@FormParam("createFile") String filename) {
+		   if(filename.isEmpty()  ) {
+			   System.out.println("Missing params for getData");
+		        throw new WebApplicationException(501);
+		    }
 		System.out.println("create file on server ");
 		try {
 			File file = new File("/home/yxg23/" + filename);
@@ -67,7 +72,7 @@ public class HelloFromGu {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return Response.ok("ok");
+		return  "looks fine" ;
 
 	}
 
@@ -161,10 +166,10 @@ public class HelloFromGu {
 	@POST
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
-	public ResponseBuilder deleteFile(@FormParam("deleteFile") String filename) {
+	public String deleteFile(@FormParam("deleteFile") String filename) {
 		System.out.println(" file delete  ");
 		new File("/home/yxg23/" + filename).delete();
-		return Response.status(200);
+		return "deleted file";
 	}
 
 	@Path("/getFileContent")
